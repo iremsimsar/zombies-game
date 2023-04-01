@@ -1,0 +1,445 @@
+[gd_scene load_steps=54 format=2]
+
+[ext_resource path="res://Entities/Images/png/Tiles/Tile (4).png" type="Texture" id=1]
+[ext_resource path="res://Entities/Images/png/Tiles/Tile (5).png" type="Texture" id=2]
+[ext_resource path="res://Entities/Images/png/Tiles/Tile (6).png" type="Texture" id=3]
+[ext_resource path="res://Scripts/world.gd" type="Script" id=4]
+[ext_resource path="res://Entities/Images/png/Objects/Skeleton.png" type="Texture" id=5]
+[ext_resource path="res://Entities/Images/png/Tiles/Tile (15).png" type="Texture" id=6]
+[ext_resource path="res://Entities/Images/png/Objects/Bush (1).png" type="Texture" id=7]
+[ext_resource path="res://Entities/Images/player/Zombie1/animation/Walk4.png" type="Texture" id=8]
+[ext_resource path="res://Entities/Images/player/Zombie1/animation/Jump2.png" type="Texture" id=9]
+[ext_resource path="res://Entities/Images/player/Zombie1/animation/Walk3.png" type="Texture" id=10]
+[ext_resource path="res://Entities/Images/player/Zombie1/animation/Jump1.png" type="Texture" id=11]
+[ext_resource path="res://Entities/Images/player/Zombie1/animation/Walk1.png" type="Texture" id=12]
+[ext_resource path="res://clou.png" type="Texture" id=13]
+[ext_resource path="res://Entities/Images/player/Zombie1/animation/Walk6.png" type="Texture" id=14]
+[ext_resource path="res://Entities/Images/player/Zombie1/animation/Idle2.png" type="Texture" id=15]
+[ext_resource path="res://Entities/Images/player/Zombie1/animation/Walk5.png" type="Texture" id=16]
+[ext_resource path="res://Entities/Images/player/Zombie1/animation/Idle1.png" type="Texture" id=17]
+[ext_resource path="res://Entities/Images/png/Objects/Tree.png" type="Texture" id=18]
+[ext_resource path="res://Entities/Images/png/BG.png" type="Texture" id=19]
+[ext_resource path="res://Entities/Images/png/Objects/ArrowSign.png" type="Texture" id=20]
+[ext_resource path="res://Scenes/dead.tscn" type="PackedScene" id=21]
+[ext_resource path="res://Entities/Images/png/Objects/TombStone (2).png" type="Texture" id=22]
+[ext_resource path="res://Entities/Images/png/Tiles/Tile (2).png" type="Texture" id=23]
+[ext_resource path="res://Entities/Images/png/Tiles/Tile (16).png" type="Texture" id=24]
+[ext_resource path="res://Entities/Images/player/Zombie1/animation/Idle4.png" type="Texture" id=25]
+[ext_resource path="res://Entities/Images/player/Zombie1/animation/Jump6.png" type="Texture" id=26]
+[ext_resource path="res://Entities/Images/png/Tiles/Bone (1).png" type="Texture" id=27]
+[ext_resource path="res://Scripts/player.gd" type="Script" id=28]
+[ext_resource path="res://Entities/Images/player/Zombie1/animation/Jump7.png" type="Texture" id=29]
+[ext_resource path="res://Entities/Images/player/Zombie1/animation/Jump4.png" type="Texture" id=30]
+[ext_resource path="res://Entities/Images/player/Zombie1/animation/Idle3.png" type="Texture" id=31]
+[ext_resource path="res://Entities/Images/player/Zombie1/animation/Jump3.png" type="Texture" id=32]
+[ext_resource path="res://Entities/sounds/generally.mp3" type="AudioStream" id=33]
+[ext_resource path="res://Entities/Images/png/Tiles/Bone (2).png" type="Texture" id=34]
+[ext_resource path="res://Entities/Images/png/Tiles/Tile (1).png" type="Texture" id=35]
+[ext_resource path="res://Entities/Images/png/Tiles/Tile (3).png" type="Texture" id=36]
+[ext_resource path="res://Entities/Images/png/Objects/TombStone (1).png" type="Texture" id=37]
+[ext_resource path="res://Entities/Images/png/Tiles/Tile (14).png" type="Texture" id=38]
+[ext_resource path="res://Scenes/hud.tscn" type="PackedScene" id=39]
+
+[sub_resource type="SpriteFrames" id=4]
+animations = [ {
+"frames": [ ExtResource( 17 ), ExtResource( 15 ), ExtResource( 31 ), ExtResource( 25 ) ],
+"loop": true,
+"name": "Idle",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 11 ), ExtResource( 9 ), ExtResource( 32 ), ExtResource( 30 ), ExtResource( 26 ), ExtResource( 29 ) ],
+"loop": true,
+"name": "Jump",
+"speed": 5.0
+}, {
+"frames": [ ExtResource( 29 ) ],
+"loop": false,
+"name": "Fall",
+"speed": 25.0
+}, {
+"frames": [ ExtResource( 12 ), ExtResource( 10 ), ExtResource( 8 ), ExtResource( 16 ), ExtResource( 14 ) ],
+"loop": true,
+"name": "Walk",
+"speed": 15.0
+} ]
+
+[sub_resource type="CapsuleShape2D" id=5]
+radius = 25.5
+height = 57.0
+
+[sub_resource type="ConvexPolygonShape2D" id=6]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=14]
+points = PoolVector2Array( 126, 128, 0, 128, 0, 0, 126, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=17]
+points = PoolVector2Array( 128, 96, 0, 96, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=8]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=9]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=10]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=11]
+points = PoolVector2Array( 128, 128, 0, 128, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=12]
+points = PoolVector2Array( 96, 96, 0, 96, 0, 0, 96, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=13]
+points = PoolVector2Array( 96, 64, 0, 64, 0, 0, 96, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=15]
+points = PoolVector2Array( 128, 96, 0, 96, 0, 0, 128, 0 )
+
+[sub_resource type="ConvexPolygonShape2D" id=16]
+points = PoolVector2Array( 128, 96, 0, 96, 0, 0, 128, 0 )
+
+[sub_resource type="TileSet" id=7]
+0/name = "Tile (1).png 0"
+0/texture = ExtResource( 35 )
+0/tex_offset = Vector2( 0, 0 )
+0/modulate = Color( 1, 1, 1, 1 )
+0/region = Rect2( 0, 0, 128, 128 )
+0/tile_mode = 0
+0/occluder_offset = Vector2( 0, 0 )
+0/navigation_offset = Vector2( 0, 0 )
+0/shape_offset = Vector2( 0, 0 )
+0/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+0/shape = SubResource( 6 )
+0/shape_one_way = false
+0/shape_one_way_margin = 1.0
+0/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 6 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+0/z_index = 0
+1/name = "Tile (2).png 1"
+1/texture = ExtResource( 23 )
+1/tex_offset = Vector2( 0, 0 )
+1/modulate = Color( 1, 1, 1, 1 )
+1/region = Rect2( 2, 0, 127, 132 )
+1/tile_mode = 0
+1/occluder_offset = Vector2( 0, 0 )
+1/navigation_offset = Vector2( 0, 0 )
+1/shape_offset = Vector2( 0, 0 )
+1/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+1/shape = SubResource( 14 )
+1/shape_one_way = false
+1/shape_one_way_margin = 1.0
+1/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 14 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+1/z_index = 0
+2/name = "Tile (3).png 2"
+2/texture = ExtResource( 36 )
+2/tex_offset = Vector2( 0, 0 )
+2/modulate = Color( 1, 1, 1, 1 )
+2/region = Rect2( 0, 0, 128, 128 )
+2/tile_mode = 0
+2/occluder_offset = Vector2( 0, 0 )
+2/navigation_offset = Vector2( 0, 0 )
+2/shape_offset = Vector2( 0, 0 )
+2/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+2/shape = SubResource( 8 )
+2/shape_one_way = false
+2/shape_one_way_margin = 1.0
+2/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 8 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+2/z_index = 0
+3/name = "Tile (4).png 3"
+3/texture = ExtResource( 1 )
+3/tex_offset = Vector2( 0, 0 )
+3/modulate = Color( 1, 1, 1, 1 )
+3/region = Rect2( 0, 0, 128, 128 )
+3/tile_mode = 0
+3/occluder_offset = Vector2( 0, 0 )
+3/navigation_offset = Vector2( 0, 0 )
+3/shape_offset = Vector2( 0, 0 )
+3/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+3/shape = SubResource( 9 )
+3/shape_one_way = false
+3/shape_one_way_margin = 1.0
+3/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 9 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+3/z_index = 0
+4/name = "Tile (5).png 4"
+4/texture = ExtResource( 2 )
+4/tex_offset = Vector2( 0, 0 )
+4/modulate = Color( 1, 1, 1, 1 )
+4/region = Rect2( 0, 0, 128, 128 )
+4/tile_mode = 0
+4/occluder_offset = Vector2( 0, 0 )
+4/navigation_offset = Vector2( 0, 0 )
+4/shape_offset = Vector2( 0, 0 )
+4/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+4/shape = SubResource( 10 )
+4/shape_one_way = false
+4/shape_one_way_margin = 1.0
+4/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 10 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+4/z_index = 0
+5/name = "Tile (6).png 5"
+5/texture = ExtResource( 3 )
+5/tex_offset = Vector2( 0, 0 )
+5/modulate = Color( 1, 1, 1, 1 )
+5/region = Rect2( 0, 0, 128, 128 )
+5/tile_mode = 0
+5/occluder_offset = Vector2( 0, 0 )
+5/navigation_offset = Vector2( 0, 0 )
+5/shape_offset = Vector2( 0, 0 )
+5/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+5/shape = SubResource( 11 )
+5/shape_one_way = false
+5/shape_one_way_margin = 1.0
+5/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 11 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+5/z_index = 0
+6/name = "Bone (1).png 6"
+6/texture = ExtResource( 27 )
+6/tex_offset = Vector2( 0, 0 )
+6/modulate = Color( 1, 1, 1, 1 )
+6/region = Rect2( 0, 32, 96, 96 )
+6/tile_mode = 0
+6/occluder_offset = Vector2( 0, 0 )
+6/navigation_offset = Vector2( 0, 0 )
+6/shape_offset = Vector2( 0, 0 )
+6/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+6/shape = SubResource( 12 )
+6/shape_one_way = false
+6/shape_one_way_margin = 1.0
+6/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 12 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+6/z_index = 0
+7/name = "Bone (2).png 7"
+7/texture = ExtResource( 34 )
+7/tex_offset = Vector2( 0, 0 )
+7/modulate = Color( 1, 1, 1, 1 )
+7/region = Rect2( 32, 32, 96, 64 )
+7/tile_mode = 0
+7/occluder_offset = Vector2( 0, 0 )
+7/navigation_offset = Vector2( 0, 0 )
+7/shape_offset = Vector2( 0, 0 )
+7/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+7/shape = SubResource( 13 )
+7/shape_one_way = false
+7/shape_one_way_margin = 1.0
+7/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 13 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+7/z_index = 0
+8/name = "Tile (14).png 8"
+8/texture = ExtResource( 38 )
+8/tex_offset = Vector2( 0, 0 )
+8/modulate = Color( 1, 1, 1, 1 )
+8/region = Rect2( 0, 0, 128, 96 )
+8/tile_mode = 0
+8/occluder_offset = Vector2( 0, 0 )
+8/navigation_offset = Vector2( 0, 0 )
+8/shape_offset = Vector2( 0, 0 )
+8/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+8/shape = SubResource( 15 )
+8/shape_one_way = false
+8/shape_one_way_margin = 1.0
+8/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 15 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+8/z_index = 0
+9/name = "Tile (15).png 9"
+9/texture = ExtResource( 6 )
+9/tex_offset = Vector2( 0, 0 )
+9/modulate = Color( 1, 1, 1, 1 )
+9/region = Rect2( 0, 0, 128, 96 )
+9/tile_mode = 0
+9/occluder_offset = Vector2( 0, 0 )
+9/navigation_offset = Vector2( 0, 0 )
+9/shape_offset = Vector2( 0, 0 )
+9/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+9/shape = SubResource( 16 )
+9/shape_one_way = false
+9/shape_one_way_margin = 1.0
+9/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 16 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+9/z_index = 0
+10/name = "Tile (16).png 10"
+10/texture = ExtResource( 24 )
+10/tex_offset = Vector2( 0, 0 )
+10/modulate = Color( 1, 1, 1, 1 )
+10/region = Rect2( 0, 0, 128, 96 )
+10/tile_mode = 0
+10/occluder_offset = Vector2( 0, 0 )
+10/navigation_offset = Vector2( 0, 0 )
+10/shape_offset = Vector2( 0, 0 )
+10/shape_transform = Transform2D( 1, 0, 0, 1, 0, 0 )
+10/shape = SubResource( 17 )
+10/shape_one_way = false
+10/shape_one_way_margin = 1.0
+10/shapes = [ {
+"autotile_coord": Vector2( 0, 0 ),
+"one_way": false,
+"one_way_margin": 1.0,
+"shape": SubResource( 17 ),
+"shape_transform": Transform2D( 1, 0, 0, 1, 0, 0 )
+} ]
+10/z_index = 0
+
+[node name="world" type="Node"]
+script = ExtResource( 4 )
+
+[node name="player" type="KinematicBody2D" parent="."]
+position = Vector2( -563, 446 )
+collision_mask = 14
+script = ExtResource( 28 )
+__meta__ = {
+"_edit_group_": true
+}
+
+[node name="Zombie" type="AnimatedSprite" parent="player"]
+position = Vector2( 55.5491, 73.8388 )
+scale = Vector2( 0.293235, 0.310961 )
+frames = SubResource( 4 )
+animation = "Jump"
+frame = 4
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="player"]
+position = Vector2( 53.5, 77 )
+shape = SubResource( 5 )
+
+[node name="Camera2D" type="Camera2D" parent="player"]
+current = true
+limit_bottom = 700
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="player"]
+
+[node name="TextureRect" type="TextureRect" parent="player/ParallaxBackground"]
+margin_right = 40.0
+margin_bottom = 40.0
+texture = ExtResource( 19 )
+
+[node name="walds" type="TileMap" parent="."]
+tile_set = SubResource( 7 )
+cell_tile_origin = 1
+show_collision = true
+collision_layer = 2
+collision_mask = 5
+format = 1
+tile_data = PoolIntArray( 65545, 8, 0, 65547, 9, 0, 65549, 10, 0, 262149, 8, 0, 262151, 9, 0, 262153, 10, 0, 524277, 2, 0, 524285, 6, 0, 458754, 1, 0, 458766, 6, 0, 589820, 7, 0, 589821, 7, 0, 524302, 7, 0, 524303, 7, 0, 655342, 1, 0, 655343, 1, 0, 655344, 1, 0, 655345, 1, 0, 655346, 1, 0, 655347, 1, 0, 655348, 1, 0, 655349, 1, 0, 655350, 1, 0, 655351, 1, 0, 655352, 1, 0, 655353, 1, 0, 655354, 1, 0, 655355, 1, 0, 655356, 1, 0, 655357, 1, 0, 655358, 1, 0, 655359, 1, 0, 589824, 1, 0, 589825, 1, 0, 589826, 1, 0, 589827, 1, 0, 589828, 1, 0, 589829, 1, 0, 589830, 1, 0, 589831, 1, 0, 589832, 1, 0, 589833, 1, 0, 589834, 1, 0, 589835, 1, 0, 589836, 1, 0, 589837, 1, 0, 589838, 1, 0, 589839, 1, 0, 589840, 1, 0, 589841, 1, 0, 589842, 1, 0, 589843, 1, 0, 589844, 1, 0, 589845, 1, 0, 589846, 1, 0, 589847, 1, 0, 589848, 1, 0, 589849, 1, 0, 589850, 1, 0, 589851, 1, 0, 589852, 1, 0, 589853, 1, 0, 589854, 1, 0 )
+
+[node name="Clou" type="Sprite" parent="."]
+position = Vector2( 239, 107 )
+scale = Vector2( 0.374062, 0.145312 )
+texture = ExtResource( 13 )
+offset = Vector2( -88.2205, 316.559 )
+
+[node name="Clou" type="Sprite" parent="Clou"]
+position = Vector2( -141.688, 165.161 )
+scale = Vector2( 1.04308, 0.834253 )
+texture = ExtResource( 13 )
+offset = Vector2( -88.2205, 316.559 )
+
+[node name="generally" type="AudioStreamPlayer2D" parent="."]
+visible = false
+stream = ExtResource( 33 )
+attenuation = 9.18958
+
+[node name="dead" parent="." instance=ExtResource( 21 )]
+position = Vector2( -266, 333 )
+
+[node name="dead2" parent="." instance=ExtResource( 21 )]
+position = Vector2( 662, -229 )
+scale = Vector2( 3, 3 )
+
+[node name="dead3" parent="." instance=ExtResource( 21 )]
+position = Vector2( 299, 125 )
+scale = Vector2( 2, 2 )
+
+[node name="dead4" parent="." instance=ExtResource( 21 )]
+position = Vector2( 935, -503 )
+scale = Vector2( 3.5, 3.5 )
+
+[node name="dead5" parent="." instance=ExtResource( 21 )]
+position = Vector2( 1616, 253 )
+scale = Vector2( 2, 2 )
+
+[node name="ArrowSign" type="Sprite" parent="."]
+position = Vector2( -423, 546 )
+scale = Vector2( 0.616279, 0.695402 )
+z_index = -1
+texture = ExtResource( 20 )
+
+[node name="Bush(1)" type="Sprite" parent="ArrowSign"]
+position = Vector2( 602, 20.132 )
+scale = Vector2( 0.553494, 0.611846 )
+texture = ExtResource( 7 )
+
+[node name="Tree" type="Sprite" parent="ArrowSign"]
+position = Vector2( 1404.4, -108.211 )
+scale = Vector2( 1.25386, 1.27255 )
+texture = ExtResource( 18 )
+
+[node name="Skeleton" type="Sprite" parent="ArrowSign"]
+position = Vector2( 1666.45, 20.1322 )
+scale = Vector2( 0.954495, 0.86281 )
+texture = ExtResource( 5 )
+
+[node name="TombStone(2)" type="Sprite" parent="ArrowSign"]
+position = Vector2( 743.17, 21.5701 )
+scale = Vector2( 0.553494, 0.611845 )
+texture = ExtResource( 22 )
+
+[node name="TombStone(1)" type="Sprite" parent="ArrowSign"]
+position = Vector2( 1575.59, 7.18988 )
+scale = Vector2( 1.25386, 1.27255 )
+texture = ExtResource( 37 )
+
+[node name="HUD" parent="." instance=ExtResource( 39 )]

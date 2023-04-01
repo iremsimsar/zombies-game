@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/generally.mp3-cc09bf302a02f1ad97532290bda3efcb.mp3str"
+
+[deps]
+
+source_file="res://Entities/sounds/generally.mp3"
+dest_files=[ "res://.import/generally.mp3-cc09bf302a02f1ad97532290bda3efcb.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
